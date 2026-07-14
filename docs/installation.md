@@ -4,10 +4,10 @@
 2. Run `Extensions: Install from VSIX`.
 3. Reload VS Code.
 4. Run `PDF Knowledge: Configure Azure OpenAI`.
-5. Enter the API key supplied separately.
+5. Enter your Azure OpenAI endpoint, deployment name, API version, and API key.
 6. Run `PDF Knowledge: Test Local Knowledge and Azure OpenAI`.
 
-This repository snapshot includes 9 local knowledge records.
+This repository snapshot includes 55 local knowledge records.
 
 No Python service, Docker container, vector database, or retrieval URL is required.
 

@@ -11,8 +11,8 @@ First self-contained public proof-of-concept release.
 ## Runtime
 
 - Local TypeScript Retrieval v4.4
-- Bundled 9-record public NIST demonstration pack
+- Bundled 55-record public NIST demonstration pack
 - Azure OpenAI planning and grounded generation
 - VS Code SecretStorage for API-key handling
 
-End users need only VS Code, the VSIX, and a matching Azure OpenAI API key.
+End users need only VS Code, the VSIX, and their Azure OpenAI endpoint, deployment name, API version, and API key.

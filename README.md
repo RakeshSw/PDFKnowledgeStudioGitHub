@@ -28,15 +28,26 @@ PDF Knowledge Studio turns curated document knowledge into three connected produ
 
 ```mermaid
 flowchart LR
-    U[VS Code User] --> E[PDF Knowledge Studio]
-    E --> P[Azure OpenAI Planning]
-    P --> R[Local TypeScript Retrieval v4.4]
-    R --> K[Bundled NIST Knowledge]
-    R --> G[Azure OpenAI Grounded Generation]
-    G --> X[Assistant / Builder / Explorer]
+    U["VS Code User"] --> E["PDF Knowledge Studio"]
+    E --> P["Azure OpenAI Planning"]
+    P --> R["Local TypeScript Retrieval v4.4"]
+    R --> K["Bundled NIST Knowledge"]
+    R --> G["Azure OpenAI Grounded Generation"]
+    G --> X["Assistant, Document Builder, and Knowledge Explorer"]
     X --> U
 ```
+## Download and install
 
+Download the latest packaged extension from the
+[GitHub Releases page](https://github.com/RakeshSw/PDFKnowledgeStudioGitHub/releases/download/v0.4.1/pdf-knowledge-assistant-0.4.1.vsix).
+
+Then install it in Visual Studio Code:
+
+1. Open **Extensions**.
+2. Select the `...` menu.
+3. Choose **Install from VSIX...**
+4. Select the downloaded `.vsix` file.
+5. Reload Visual Studio Code.
 ## Products
 
 ### Grounded Assistant

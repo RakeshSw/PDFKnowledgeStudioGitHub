@@ -28,15 +28,14 @@ PDF Knowledge Studio turns curated document knowledge into three connected produ
 
 ```mermaid
 flowchart LR
-    U[VS Code User] --> E[PDF Knowledge Studio]
-    E --> P[Azure OpenAI Planning]
-    P --> R[Local TypeScript Retrieval v4.4]
-    R --> K[Bundled NIST Knowledge]
-    R --> G[Azure OpenAI Grounded Generation]
-    G --> X[Assistant / Builder / Explorer]
+    U["VS Code User"] --> E["PDF Knowledge Studio"]
+    E --> P["Azure OpenAI Planning"]
+    P --> R["Local TypeScript Retrieval v4.4"]
+    R --> K["Bundled NIST Knowledge"]
+    R --> G["Azure OpenAI Grounded Generation"]
+    G --> X["Assistant, Document Builder, and Knowledge Explorer"]
     X --> U
 ```
-
 ## Products
 
 ### Grounded Assistant
@@ -47,17 +46,21 @@ flowchart LR
 
 Includes Fast and Deep modes, follow-up rewriting, compound-question planning, citations, page ranges, suggested questions, and handoff to the other products.
 
+<img width="1101" height="887" alt="Screenshot 2026-07-14 175600" src="https://github.com/user-attachments/assets/45cdd61e-1436-49ba-ad54-70bb74723383" />
+
 ### Document Builder
 
 ```text
 Create a beginner-friendly implementation guide for NIST CSF 2.0 Organizational Profiles.
 ```
+<img width="1396" height="943" alt="Screenshot 2026-07-14 175936" src="https://github.com/user-attachments/assets/cb54a217-8dcf-4bf6-8841-6615a29f23d5" />
 
 Includes document planning, per-section retrieval, rendered preview, raw Markdown, Mermaid visuals, and source evidence.
 
 ### Knowledge Explorer
 
 Includes an overall concept map, clickable knowledge nodes, guided learning, related concepts, suggested questions, knowledge checks, and document handoff.
+<img width="1402" height="945" alt="Screenshot 2026-07-14 180147" src="https://github.com/user-attachments/assets/c0688359-f582-4616-867a-5a06945925fd" />
 
 ## Quick start
 
@@ -68,10 +71,12 @@ Includes an overall concept map, clickable knowledge nodes, guided learning, rel
 
 ### Installation
 
-1. Download the VSIX from GitHub Releases.
+1. Download the latest packaged extension from the
+[GitHub Releases page](https://github.com/RakeshSw/PDFKnowledgeStudioGitHub/releases/download/v0.4.1/pdf-knowledge-assistant-0.4.1.vsix).
 2. In VS Code run **Extensions: Install from VSIX**.
 3. Reload VS Code.
-4. Run **PDF Knowledge: Configure Azure OpenAI**.
+4. Run **PDF Knowledge: Configure Azure OpenAI**. <img width="797" height="185" alt="Screenshot 2026-07-14 175646" src="https://github.com/user-attachments/assets/9a83ec15-e923-476f-b6a5-b6defa628f21" />
+
 5. Enter your Azure OpenAI endpoint, deployment name, API version, and API key.
 6. Run **PDF Knowledge: Test Local Knowledge and Azure OpenAI**.
 

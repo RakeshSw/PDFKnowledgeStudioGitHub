@@ -36,18 +36,6 @@ flowchart LR
     G --> X["Assistant, Document Builder, and Knowledge Explorer"]
     X --> U
 ```
-## Download and install
-
-Download the latest packaged extension from the
-[GitHub Releases page](https://github.com/RakeshSw/PDFKnowledgeStudioGitHub/releases/download/v0.4.1/pdf-knowledge-assistant-0.4.1.vsix).
-
-Then install it in Visual Studio Code:
-
-1. Open **Extensions**.
-2. Select the `...` menu.
-3. Choose **Install from VSIX...**
-4. Select the downloaded `.vsix` file.
-5. Reload Visual Studio Code.
 ## Products
 
 ### Grounded Assistant
@@ -83,10 +71,12 @@ Includes an overall concept map, clickable knowledge nodes, guided learning, rel
 
 ### Installation
 
-1. Download the VSIX from GitHub Releases.
+1. Download the latest packaged extension from the
+[GitHub Releases page](https://github.com/RakeshSw/PDFKnowledgeStudioGitHub/releases/download/v0.4.1/pdf-knowledge-assistant-0.4.1.vsix).
 2. In VS Code run **Extensions: Install from VSIX**.
 3. Reload VS Code.
-4. Run **PDF Knowledge: Configure Azure OpenAI**.
+4. Run **PDF Knowledge: Configure Azure OpenAI**. <img width="797" height="185" alt="Screenshot 2026-07-14 175646" src="https://github.com/user-attachments/assets/9a83ec15-e923-476f-b6a5-b6defa628f21" />
+
 5. Enter your Azure OpenAI endpoint, deployment name, API version, and API key.
 6. Run **PDF Knowledge: Test Local Knowledge and Azure OpenAI**.
 

@@ -1,0 +1,223 @@
+{
+  "name": "pdf-knowledge-assistant",
+  "displayName": "PDF Knowledge Studio",
+  "description": "A self-contained AI knowledge platform for Visual Studio Code with local retrieval, grounded answers, evidence-backed document generation, Mermaid diagrams, and interactive knowledge exploration.",
+  "version": "0.4.1",
+  "publisher": "knowledge-studio",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "azure openai",
+    "concept map",
+    "document builder",
+    "document generation",
+    "grounded ai",
+    "guided learning",
+    "knowledge",
+    "knowledge explorer",
+    "knowledge management",
+    "local retrieval",
+    "mermaid",
+    "nist csf",
+    "pdf",
+    "rag",
+    "vscode extension"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "files": [
+    "dist/**",
+    "prompts/**",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "media/**",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pdfKnowledge.configure",
+        "title": "Configure Azure OpenAI",
+        "category": "PDF Knowledge"
+      },
+      {
+        "command": "pdfKnowledge.testConnections",
+        "title": "Test Local Knowledge and Azure OpenAI",
+        "category": "PDF Knowledge"
+      },
+      {
+        "command": "pdfKnowledge.openDocumentBuilder",
+        "title": "Open Document Builder",
+        "category": "PDF Knowledge"
+      },
+      {
+        "command": "pdfKnowledge.openKnowledgeExplorer",
+        "title": "Open Knowledge Explorer",
+        "category": "PDF Knowledge"
+      },
+      {
+        "command": "pdfKnowledge.clearSecrets",
+        "title": "Clear Stored Secrets",
+        "category": "PDF Knowledge"
+      }
+    ],
+    "chatParticipants": [
+      {
+        "id": "pdfKnowledge.assistant",
+        "name": "pdf-knowledge",
+        "fullName": "PDF Knowledge Assistant",
+        "description": "Ask evidence-grounded questions across the ingested PDF knowledge base.",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "ask",
+            "description": "Ask a grounded question using adaptive retrieval"
+          },
+          {
+            "name": "deep",
+            "description": "Use deep retrieval for a detailed evidence-grounded answer"
+          },
+          {
+            "name": "fast",
+            "description": "Use fast retrieval for a concise evidence-grounded answer"
+          },
+          {
+            "name": "sources",
+            "description": "Show ranked evidence without generating an answer"
+          },
+          {
+            "name": "document",
+            "description": "Open Document Builder with this prompt"
+          },
+          {
+            "name": "explore",
+            "description": "Open an interactive evidence-grounded concept map and guided learning path"
+          },
+          {
+            "name": "health",
+            "description": "Test bundled local knowledge and Azure OpenAI"
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "pdf_knowledge_questions",
+            "description": "Questions that should be answered from the bundled or locally generated PDF knowledge base, including framework definitions, processes, controls, profiles, guidance, and source evidence.",
+            "examples": [
+              "What are the six NIST Cybersecurity Framework functions?",
+              "How should an organization create and use an Organizational Profile?",
+              "Show the source evidence for CSF Tiers."
+            ]
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "PDF Knowledge Assistant",
+      "properties": {
+        "pdfKnowledge.azure.endpoint": {
+          "type": "string",
+          "default": "",
+          "description": "Azure OpenAI resource endpoint. Run 'PDF Knowledge: Configure Azure OpenAI' to set it."
+        },
+        "pdfKnowledge.azure.deployment": {
+          "type": "string",
+          "default": "",
+          "description": "Azure OpenAI deployment name. Run 'PDF Knowledge: Configure Azure OpenAI' to set it."
+        },
+        "pdfKnowledge.azure.apiVersion": {
+          "type": "string",
+          "default": "2024-10-21",
+          "description": "Azure OpenAI REST API version."
+        },
+        "pdfKnowledge.azure.temperature": {
+          "type": "number",
+          "default": 0.1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Default temperature for planning and grounded generation."
+        },
+        "pdfKnowledge.azure.maxTokens": {
+          "type": "number",
+          "default": 1600,
+          "minimum": 300,
+          "maximum": 16000,
+          "description": "Default maximum output tokens. Lower values reduce Azure TPM rate-limit pressure."
+        },
+        "pdfKnowledge.azure.timeoutMs": {
+          "type": "number",
+          "default": 120000,
+          "minimum": 5000,
+          "maximum": 300000,
+          "description": "Azure OpenAI request timeout in milliseconds."
+        },
+        "pdfKnowledge.retrieval.defaultMode": {
+          "type": "string",
+          "enum": [
+            "fast",
+            "deep"
+          ],
+          "default": "deep",
+          "description": "Default mode for the bundled local TypeScript retrieval engine."
+        },
+        "pdfKnowledge.retrieval.maxCompoundQueries": {
+          "type": "number",
+          "default": 4,
+          "minimum": 1,
+          "maximum": 8,
+          "description": "Maximum retrieval queries generated for a compound user question."
+        },
+        "pdfKnowledge.document.maxSections": {
+          "type": "number",
+          "default": 6,
+          "minimum": 1,
+          "maximum": 12,
+          "description": "Maximum sections generated in one Document Builder run."
+        },
+        "pdfKnowledge.document.outputFolder": {
+          "type": "string",
+          "default": "generated-documents",
+          "description": "Default workspace-relative output folder for generated Markdown documents."
+        },
+        "pdfKnowledge.logging.showPlan": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show the Azure query plan in the chat response for debugging."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node ./node_modules/typescript/bin/tsc -p ./",
+    "watch": "node ./node_modules/typescript/bin/tsc -watch -p ./",
+    "lint": "node ./node_modules/typescript/bin/tsc --noEmit -p ./",
+    "package": "npm run compile && npx @vscode/vsce package --no-dependencies --allow-missing-repository",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.99.0",
+    "@vscode/vsce": "^3.3.2",
+    "marked": "^15.0.12",
+    "mermaid": "^11.6.0",
+    "typescript": "^5.8.3"
+  },
+  "author": {
+    "name": "Rakesh Swain",
+    "url": "https://github.com/RakeshSw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RakeshSw/PDFKnowledgeStudioGitHub.git"
+  },
+  "homepage": "https://github.com/RakeshSw/PDFKnowledgeStudioGitHub",
+  "bugs": {
+    "url": "https://github.com/RakeshSw/PDFKnowledgeStudioGitHub/issues"
+  }
+}

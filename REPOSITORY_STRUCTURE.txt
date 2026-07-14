@@ -1,0 +1,43 @@
+PDFKnowledgeStudioGitHub/
+├── extension/
+│   ├── src/
+│   ├── dist/
+│   ├── media/knowledge/
+│   ├── media/marked.min.js
+│   ├── media/mermaid.min.js
+│   ├── prompts/
+│   ├── LICENSES/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── tsconfig.json
+├── knowledge-pipeline/
+│   ├── 01_pdf_to_enriched_chunks.py
+│   ├── 02_build_knowledge_base.py
+│   ├── common.py
+│   ├── config.json
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── download_source_pdfs.ps1
+│   ├── source_manifest.csv
+│   └── README.md
+├── docs/
+│   ├── end-to-end-guide.md
+│   ├── architecture.md
+│   ├── source-documents.md
+│   ├── knowledge-manufacturing.md
+│   ├── local-retrieval.md
+│   ├── installation.md
+│   ├── knowledge-pack.md
+│   └── images/
+├── scripts/
+│   ├── build-vsix.ps1
+│   ├── replace-knowledge-pack.ps1
+│   ├── scan-publication.ps1
+│   └── test-repository.ps1
+├── README.md
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE
+├── RELEASE_NOTES_v0.4.1.md
+└── .gitignore

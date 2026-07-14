@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "workspace": "NIST_CSF_2_0",
+  "domain": "Cybersecurity",
+  "source_collection": "NIST Cybersecurity Framework 2.0",
+  "chunking": {
+    "target_chars": 9000,
+    "overlap_chars": 1200,
+    "min_chars": 500
+  },
+  "llm": {
+    "prompt_version": "pdf-enrichment-v1",
+    "max_retries": 5,
+    "retry_base_seconds": 2,
+    "request_delay_seconds": 0.25,
+    "use_json_mode": true
+  },
+  "quality": {
+    "minimum_source_chars": 200
+  }
+}

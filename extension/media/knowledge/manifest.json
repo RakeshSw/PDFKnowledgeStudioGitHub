@@ -1,0 +1,8 @@
+{
+    "schemaVersion":  "1.0",
+    "knowledgeVersion":  "nist-csf-2.0-public-demo",
+    "retrievalVersion":  "4.4.0-local",
+    "recordCount":  55,
+    "sha256":  "699b7fb0ab36770093fbb52f443993137781e97a19acdc140e3e9c6d49beb475",
+    "description":  "Bundled public NIST CSF demonstration knowledge pack."
+}

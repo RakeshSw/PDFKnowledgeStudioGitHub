@@ -47,17 +47,21 @@ flowchart LR
 
 Includes Fast and Deep modes, follow-up rewriting, compound-question planning, citations, page ranges, suggested questions, and handoff to the other products.
 
+<img width="1101" height="887" alt="Screenshot 2026-07-14 175600" src="https://github.com/user-attachments/assets/45cdd61e-1436-49ba-ad54-70bb74723383" />
+
 ### Document Builder
 
 ```text
 Create a beginner-friendly implementation guide for NIST CSF 2.0 Organizational Profiles.
 ```
+<img width="1396" height="943" alt="Screenshot 2026-07-14 175936" src="https://github.com/user-attachments/assets/cb54a217-8dcf-4bf6-8841-6615a29f23d5" />
 
 Includes document planning, per-section retrieval, rendered preview, raw Markdown, Mermaid visuals, and source evidence.
 
 ### Knowledge Explorer
 
 Includes an overall concept map, clickable knowledge nodes, guided learning, related concepts, suggested questions, knowledge checks, and document handoff.
+<img width="1402" height="945" alt="Screenshot 2026-07-14 180147" src="https://github.com/user-attachments/assets/c0688359-f582-4616-867a-5a06945925fd" />
 
 ## Quick start
 
